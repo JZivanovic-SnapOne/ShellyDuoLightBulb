@@ -1,0 +1,13 @@
+<Driver type="c4z" name="template-driver">
+	<Items>
+		<Item type="dir" name="C:\Jana\Driver\drivers-template-code-master\lib" c4zDir="lib" recurse="true" />
+		<Item type="dir" name="C:\Jana\Driver\drivers-template-code-master\common" c4zDir="common" recurse="true" />
+		<Item type="dir" name="C:\Jana\Driver\drivers-template-code-master\proxies\light_proxy" c4zDir="light_proxy" recurse="true" />
+		<Item type="file" name="light_communicator.lua"/>
+		<Item type="file" name="proxy_commands.lua"/>
+		<Item type="file" name="properties.lua"/>
+		<Item type="file" name="driver.xml"/>
+		<Item type="file" name="driver.lua"/>
+		<Item type="dir" name="www" recurse="true" />
+	</Items>
+</Driver>

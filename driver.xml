@@ -1,0 +1,227 @@
+<devicedata>
+  <copyright>Copyright 2023 Snap One, LLC. All Rights Reserved.</copyright>
+  <creator>Control4</creator>
+  <manufacturer>Control4</manufacturer>
+  <name>Template Jana Light Driver (OS 3.3.0+)</name>
+  <model>DMX</model>
+  <created>01/17/2022 12:00 AM</created>
+  <modified>02/10/2022 12:00 AM</modified>
+  <version>26</version>
+  <small>devices_sm\c4.gif</small>
+  <large>devices_lg\c4.gif</large>
+  <control>lua_gen</control>
+  <controlmethod></controlmethod>
+  <minimum_os_version>3.3.0</minimum_os_version>
+  <force_auto_update>false</force_auto_update>
+  <OnlineCategory>light</OnlineCategory>
+  <!-- Specifes a category when searching this driver in Composer Pro's Search Items view -->
+  <composer_categories>
+    <category>Lights</category>
+  </composer_categories>
+  <proxies qty="1">
+      <proxy proxybindingid="5001" name="Template Jana Light">light_v2</proxy>
+  </proxies>
+  <driver>DriverWorks</driver>
+  <capabilities>
+    <has_extras>True</has_extras>
+    <level_target>True</level_target>
+    <dimmer>True</dimmer>
+    <supports_target>True</supports_target>
+    <supports_color>False</supports_color>
+    <supports_color_correlated_temperature>True</supports_color_correlated_temperature>
+    <color_correlated_temperature_min>2700</color_correlated_temperature_min>
+    <color_correlated_temperature_max>6500</color_correlated_temperature_max>
+    <color_rate_min>10</color_rate_min>
+    <color_rate_max>6553500</color_rate_max>
+    <set_level>True</set_level>
+    <ramp_level>True</ramp_level>
+    <on_off>True</on_off>
+    <supports_default_on>True</supports_default_on>
+    <click_rates>True</click_rates>
+    <hold_rates>True</hold_rates>
+    <hold_rate_min>1000</hold_rate_min>
+    <hold_rate_max>6553500</hold_rate_max>
+    <click_rate_min>10</click_rate_min>
+    <click_rate_max>6553500</click_rate_max>
+    <cold_start>False</cold_start>
+    <has_preset>True</has_preset>
+    <min_max>False</min_max>
+    <on_off>True</on_off>
+    <has_leds>True</has_leds>
+    <hide_proxy_events>False</hide_proxy_events>
+    <hide_proxy_properties>False</hide_proxy_properties>
+    <has_button_events>False</has_button_events>
+    <num_buttons>0</num_buttons>
+    <load_group_support>True</load_group_support>
+    <advanced_scene_support>True</advanced_scene_support>
+    <reduced_als_support>False</reduced_als_support>
+    <buttons_are_virtual>True</buttons_are_virtual>
+    <!-- Next OS capabilities -->
+    <brightness_on_mode_preset>True</brightness_on_mode_preset>
+    <brightness_on_mode_previous>True</brightness_on_mode_previous>
+    <color_on_mode_previous>True</color_on_mode_previous>
+    <color_on_mode_preset>True</color_on_mode_preset>
+    <color_on_mode_fade>True</color_on_mode_fade>
+  </capabilities>
+  <connections>
+    <connection>
+      <id>5001</id>
+      <facing>6</facing>
+      <connectionname>LIGHT_V2</connectionname>
+      <type>2</type>
+      <consumer>False</consumer>
+      <audiosource>False</audiosource>
+      <videosource>False</videosource>
+      <linelevel>False</linelevel>
+      <hidden>True</hidden>
+      <classes>
+        <class>
+          <classname>LIGHT_V2</classname>
+        </class>
+      </classes>
+    </connection>
+    <connection>
+      <id>1</id>
+      <facing>6</facing>
+      <connectionname>DMX Device</connectionname>
+      <type>1</type>
+      <consumer>True</consumer>
+      <audiosource>False</audiosource>
+      <videosource>False</videosource>
+      <linelevel>True</linelevel>
+      <classes>
+        <class>
+          <classname>DMX_DLG</classname>
+          <autobind>True</autobind>
+        </class>
+      </classes>
+    </connection>
+    <connection proxybindingid="5001">
+      <id>300</id>
+      <facing>6</facing>
+      <connectionname>On Button Link</connectionname>
+      <type>1</type>
+      <consumer>False</consumer>
+      <audiosource>False</audiosource>
+      <videosource>False</videosource>
+      <linelevel>True</linelevel>
+      <classes>
+        <class>
+          <classname>BUTTON_LINK</classname>
+        </class>
+      </classes>
+    </connection>
+    <connection proxybindingid="5001">
+      <id>301</id>
+      <facing>6</facing>
+      <connectionname>Off Button Link</connectionname>
+      <type>1</type>
+      <consumer>False</consumer>
+      <audiosource>False</audiosource>
+      <videosource>False</videosource>
+      <linelevel>True</linelevel>
+      <classes>
+        <class>
+          <classname>BUTTON_LINK</classname>
+        </class>
+      </classes>
+    </connection>
+    <connection proxybindingid="5001">
+      <id>302</id>
+      <facing>6</facing>
+      <connectionname>Toggle Button Link</connectionname>
+      <type>1</type>
+      <consumer>False</consumer>
+      <audiosource>False</audiosource>
+      <videosource>False</videosource>
+      <linelevel>True</linelevel>
+      <classes>
+        <class>
+          <classname>BUTTON_LINK</classname>
+        </class>
+      </classes>
+    </connection>
+  </connections>
+  <!-- Designates other drivers as "dependent" and force those drivers to load into a project
+    simultaneously. Can also be used to have these driver automatically bind when they enter the
+    project. -->
+  <dependencies>
+  </dependencies>
+  <conditionals>
+  </conditionals>
+  <events>
+  </events>
+  <config>
+    <documentation file="www/documentation/index.html"></documentation>
+    <!-- to encrypt set attribute in script tag to encryption="2" -->
+    <script file="driver.lua" jit="1"></script>
+    <identify_text></identify_text>
+    <identify_image></identify_image>
+    <actions>
+      <action>
+        <name>Query DMX Channels</name>
+        <command>QUERY_DMX_CHANNELS</command>
+      </action>
+      <action>
+        <name>Send DMX values</name>
+        <command>SEND_DMX_VALUES</command>
+        <params>
+          <param>
+            <name>Values</name>
+            <type>STRING</type>
+          </param>
+        </params>
+      </action>
+    </actions>
+    <commands>
+    </commands>
+    <properties>
+      <property>
+        <name>Set IP adress</name>
+        <type>STRING</type>
+        <default>http://192.168.1</default>
+      </property>
+      <property>
+        <name>Log Level</name>
+        <type>LIST</type>
+        <readonly>false</readonly>
+        <default>5 - Trace</default>
+        <items>
+          <item>0 - Fatal</item>
+          <item>1 - Error</item>
+          <item>2 - Warning</item>
+          <item>3 - Info</item>
+          <item>4 - Debug</item>
+          <item>5 - Trace</item>
+        </items>
+      </property>
+      <property>
+        <name>Log Mode</name>
+        <type>LIST</type>
+        <readonly>false</readonly>
+        <default>Off</default>
+        <items>
+          <item>Off</item>
+          <item>Print</item>
+          <item>Log</item>
+          <item>Print and Log</item>
+        </items>
+      </property>
+      <property>
+        <name>Driver Status</name>
+        <type>STRING</type>
+        <readonly>true</readonly>
+        <default></default>
+      </property>
+      <property>
+        <name>Gateway Line</name>
+        <type>DYNAMIC_LIST</type>
+        <readonly>false</readonly>
+        <default></default>
+      </property>
+
+    </properties>
+    <tabs>
+    </tabs>
+  </config>
+</devicedata>
